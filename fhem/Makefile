@@ -72,6 +72,9 @@ deb:
 	rm -rf .f
 	make ROOT=`pwd`/.f install
 	cp -r contrib/DEBIAN .f
+	rm -rf .f/$(MODDIR)/contrib/FB7*/var
+	rm -rf .f/$(MODDIR)/contrib/FB7*/*.image
+	rm -rf .f/$(MODDIR)/contrib/FB7*/*.zip
 	find .f -name CVS -print | xargs rm -rf
 	find .f -name example.CVS -print | xargs rm -rf
 	find .f -name \*.orig -print | xargs rm -f
